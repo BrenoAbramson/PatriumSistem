@@ -31,7 +31,7 @@ interface MenuItem {
 }
 
 const getPerfilLabel = (perfil: string | undefined) => {
-  if (!perfil) return 'Colaborador';
+  if (!perfil) return 'Desconectado (Erro de API)';
   if (perfil === 'Administrador') return 'Desenvolvedor';
   if (perfil === 'Cliente-Gerente') return 'Gerente';
   if (perfil === 'Cliente-Colaborador') return 'Colaborador';
@@ -222,6 +222,13 @@ export function AppLayout() {
 
       {/* Main Content */}
       <main className="flex-1 flex flex-col overflow-hidden">
+        {/* Connection/Profile Error Banner */}
+        {!profile && (
+          <div className="bg-red-500 text-white px-4 py-2.5 text-center text-xs font-semibold flex items-center justify-center gap-2 shadow-inner z-20 animate-pulse">
+            <span>⚠️ Erro de conexão: Não foi possível carregar seu perfil. Verifique se o servidor backend está rodando em {API_URL} e se as variáveis de ambiente estão corretas.</span>
+          </div>
+        )}
+
         {/* Impersonation Warning Banner */}
         {impersonatedEmpresaNome && (
           <div className="bg-amber-500 text-white px-4 py-2.5 text-center text-xs font-semibold flex items-center justify-center gap-2 shadow-inner z-20">
