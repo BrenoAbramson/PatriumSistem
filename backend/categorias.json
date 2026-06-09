@@ -1,0 +1,24 @@
+{
+  "categorias": [
+    {
+      "id": "1",
+      "empresa_id": "global",
+      "nome": "Móveis e Utensílios"
+    },
+    {
+      "id": "2",
+      "empresa_id": "global",
+      "nome": "Máquinas e Equipamentos"
+    },
+    {
+      "id": "3",
+      "empresa_id": "global",
+      "nome": "Veículos"
+    },
+    {
+      "id": "4",
+      "empresa_id": "global",
+      "nome": "Informática e TI"
+    }
+  ]
+}
